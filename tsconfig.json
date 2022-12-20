@@ -1,0 +1,14 @@
+{
+  "exclude": ["node_modules/**", "test"],
+  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "target": "ES6",
+    "removeComments": false,
+    "lib": ["es2020", "dom", "dom.iterable"],
+    "module": "ES6",
+    "pretty": true,
+    "rootDir": "src",
+    "baseUrl": ".",
+  }
+}
