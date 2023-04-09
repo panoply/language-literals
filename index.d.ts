@@ -1,8 +1,4 @@
 /**
- * Dedent Literals
- */
-declare function literal(strings: TemplateStringsArray, ...values: Array<string>): string;
-/**
  * HTML Template Literal
  *
  * @example
@@ -15,7 +11,21 @@ declare function literal(strings: TemplateStringsArray, ...values: Array<string>
  *
  * `
  */
-declare const html: typeof literal;
+declare const html: (strings: TemplateStringsArray, ...values: Array<string>) => string;
+/**
+ * Liquid Template Literal
+ *
+ * @example
+ *
+* liquid`
+*
+*  {% for i in arr %}
+*    <strong class="pink">Hello World</strong>
+*  {% endfor %}
+*
+* `
+*/
+declare const liquid: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * XHTML Template Literal
  *
@@ -27,7 +37,7 @@ declare const html: typeof literal;
  *
  * `
  */
-declare const xhtml: typeof literal;
+declare const xhtml: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * XML Template Literal
  *
@@ -39,7 +49,7 @@ declare const xhtml: typeof literal;
  *
  * `
  */
-declare const xml: typeof literal;
+declare const xml: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * CSS Template Literal
  *
@@ -53,7 +63,7 @@ declare const xml: typeof literal;
  *
  * `
  */
-declare const css: typeof literal;
+declare const css: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * SCSS Template Literal
  *
@@ -67,7 +77,7 @@ declare const css: typeof literal;
  *
  * `
  */
-declare const scss: typeof literal;
+declare const scss: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * SASS Template Literal
  *
@@ -80,7 +90,7 @@ declare const scss: typeof literal;
  *
  * `
  */
-declare const sass: typeof literal;
+declare const sass: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * JSON Template Literal
  *
@@ -94,7 +104,7 @@ declare const sass: typeof literal;
  *
  * `
  */
-declare const json: typeof literal;
+declare const json: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * JSON Template Literal
  *
@@ -108,7 +118,7 @@ declare const json: typeof literal;
  *
  * `
  */
-declare const jsonc: typeof literal;
+declare const jsonc: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * JavaScript Template Literal
  *
@@ -119,7 +129,7 @@ declare const jsonc: typeof literal;
  *  function foo () { }
  *
  */
-declare const js: typeof literal;
+declare const js: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * JSX Template Literal
  *
@@ -135,7 +145,7 @@ declare const js: typeof literal;
  *
  * `
  */
-declare const jsx: typeof literal;
+declare const jsx: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * TypeScript Template Literal
  *
@@ -147,7 +157,7 @@ declare const jsx: typeof literal;
  *
  * `
  */
-declare const ts: typeof literal;
+declare const ts: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * TSX Template Literal
  *
@@ -163,7 +173,7 @@ declare const ts: typeof literal;
  *
  * `
  */
-declare const tsx: typeof literal;
+declare const tsx: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * YAML Template Literal
  *
@@ -177,7 +187,7 @@ declare const tsx: typeof literal;
  *   - two
  * `
  */
-declare const yaml: typeof literal;
+declare const yaml: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 /**
  * Markdown Template Literal
  *
@@ -191,6 +201,6 @@ declare const yaml: typeof literal;
  *
  * `
  */
-declare const md: typeof literal;
+declare const md: (strings: TemplateStringsArray, ...values: Array<string>) => string;
 
-export { css, html, js, json, jsonc, jsx, md, sass, scss, ts, tsx, xhtml, xml, yaml };
+export { css, html, js, json, jsonc, jsx, liquid, md, sass, scss, ts, tsx, xhtml, xml, yaml };

@@ -1,6 +1,7 @@
 import test from 'ava';
 import {
   html,
+  liquid,
   xml,
   xhtml,
   json,
@@ -30,6 +31,26 @@ test('HTML', t => {
     '<div>',
     '  Hello World',
     '</div>'
+  ));
+
+});
+
+test('LIQUID', t => {
+
+  const dedent = liquid`
+    {% for i in arr %}
+      <strong>
+        Hello World
+      </strong>
+    {% endfor %}
+  `;
+
+  t.deepEqual(dedent, join(
+    '{% for i in arr %}',
+    '  <strong>',
+    '    Hello World',
+    '  </strong>',
+    '{% endfor %}'
   ));
 
 });

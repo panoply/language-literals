@@ -18,6 +18,7 @@ Use named import expressions, the syntax highlighting grammars will not work on 
 ```ts
 import {
   html,
+  liquid,
   xml,
   xhtml,
   json,
@@ -34,6 +35,7 @@ import {
 } from "language-literals";
 
 html``;
+liquid``;
 xml``;
 xhtml``;
 json``;
@@ -49,6 +51,65 @@ tsx``;
 md``;
 
 ```
+
+### Example
+
+Let's take the following expression, wherein the `html` literal is indented at a depth of 3 from the right side:
+
+<!-- prettier-ignore-->
+```js
+import { html } from 'language-literals';
+
+function example () {
+
+  const object = {
+    property: [
+
+      /* WITHOUT LANGUAGE LITERAL */
+      `
+
+      <div>
+        <h1>Hello World</h1>
+      </div>
+
+      `,
+
+      /* WITH LANGUAGE LITERAL */
+      html`
+
+      <div>
+        <h1>Hello World</h1>
+      </div>
+
+      `
+
+    ]
+  }
+}
+```
+
+The output result would preserve the additional whitespace starting from the left side. Using the above sample:
+
+**Without Language Literal**
+
+<!--prettier-ignore-->
+```
+
+      <div>
+        <h1>Hello World</h1>
+      </div>
+
+```
+
+**Using Language Literal**
+
+```
+<div>
+  <h1>Hello World</h1>
+</div>
+```
+
+Notice how the code output when using the `html` literal trims the leading and ending spaces. Very cool.
 
 ### License
 

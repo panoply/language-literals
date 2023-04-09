@@ -1,7 +1,9 @@
 /**
  * Dedent Literals
  */
-function literal (strings: TemplateStringsArray, ...values: Array<string>) {
+const literal: {
+  (strings: TemplateStringsArray, ...values: Array<string>): string
+} = function literal (strings: TemplateStringsArray, ...values: Array<string>) {
 
   const raw = typeof strings === 'string' ? [ strings ] : strings.raw;
   const len = raw.length;
@@ -42,7 +44,7 @@ function literal (strings: TemplateStringsArray, ...values: Array<string>) {
 
   return result.trim().replace(/\\n/g, '\n');
 
-}
+};
 
 /**
  * HTML Template Literal
@@ -58,6 +60,21 @@ function literal (strings: TemplateStringsArray, ...values: Array<string>) {
  * `
  */
 export const html = literal;
+
+/**
+ * Liquid Template Literal
+ *
+ * @example
+ *
+* liquid`
+*
+*  {% for i in arr %}
+*    <strong class="pink">Hello World</strong>
+*  {% endfor %}
+*
+* `
+*/
+export const liquid = literal;
 
 /**
  * XHTML Template Literal
